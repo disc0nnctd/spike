@@ -56,7 +56,7 @@ class Bird:
         if d >= 10:
             d = 10
         if d < 0:
-            d =- 2
+            d =- 10
         
         self.y = self.y + d
         
@@ -128,13 +128,12 @@ def main():
     walls = Walls()
     run = True
     while run:
-        clock.tick(30)
+        clock.tick(20)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_w:
-                    print("bird jump??")
                     bird.jump()
         bird.move()
         bird.hitwall(walls)
